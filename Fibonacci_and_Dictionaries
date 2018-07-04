@@ -1,4 +1,6 @@
 def fib(n):
+    global numfibcall
+    numfibcall += 1
     if n == 1:
         return 1
     elif n == 2:
@@ -9,6 +11,8 @@ def fib(n):
 
 
 def fib_eff(n, d):
+    global numfibcall
+    numfibcall += 1
     if n in d:
         return d[n]
     else:
@@ -16,13 +20,14 @@ def fib_eff(n, d):
         d[n] = ans
         return ans
 
-
-argTopass =  25
-d = {1:1, 2:2, 3:3}
-print("")
-print("Traditinal function")
+numfibcall=0
+argTopass =  5
+d = {1:1, 2:2}
+print("traditinal function")
 print(fib(argTopass))
-print("")
+print("Function calls", numfibcall)
+numfibcall=0
 
 print("Efficient function")
 print(fib_eff(argTopass,d))
+print("Function calls", numfibcall)
