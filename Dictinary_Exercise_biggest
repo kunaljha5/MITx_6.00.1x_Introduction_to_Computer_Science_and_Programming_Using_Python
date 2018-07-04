@@ -1,0 +1,36 @@
+def biggest(aDict):
+     alist = {}
+     for item in aDict:
+         #print(aDict[item])
+         count = 0 
+         for i in aDict[item]:
+             count += 1
+             #print(i)
+             #print(count)
+         alist.update({item:count})
+
+     #print(alist)
+     av = []
+     for va in alist:
+         #print(alist[va])
+         av.append(alist[va])
+     av.sort
+     #print(av)
+     huge = av[-1]
+     for item in alist:
+         if alist[item] == huge:
+             biggest = item
+     return biggest 
+            
+            
+            
+            
+            
+            
+animals = { 'a': ['aardvark'], 'b': ['baboon'], 'c': ['coati']}
+
+animals['d'] = ['donkey']
+animals['d'].append('dog')
+animals['d'].append('dingo')
+#print(animals)
+print(biggest(animals))
