@@ -1,0 +1,28 @@
+def fib(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    else:
+        return fib(n-1) + fib(n-2)
+
+
+
+def fib_eff(n, d):
+    if n in d:
+        return d[n]
+    else:
+        ans = fib_eff(n-1,d) + fib_eff(n-2,d)
+        d[n] = ans
+        return ans
+
+
+argTopass =  25
+d = {1:1, 2:2, 3:3}
+print("")
+print("Traditinal function")
+print(fib(argTopass))
+print("")
+
+print("Efficient function")
+print(fib_eff(argTopass,d))
